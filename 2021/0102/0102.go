@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"io"
 	"strconv"
@@ -12,25 +11,6 @@ import (
 const (
 	id = "0102"
 )
-
-func lineToInt(line string) int {
-	i, err := strconv.Atoi(line)
-	if err != nil {
-		panic(err)
-	}
-
-	return i
-}
-
-func scannerToIntSlice(scanner *bufio.Scanner) []int {
-	var numbers []int
-
-	for scanner.Scan() {
-		numbers = append(numbers, lineToInt(scanner.Text()))
-	}
-
-	return numbers
-}
 
 func sum3(start int, numbers []int) (int, error) {
 	sum := 0
